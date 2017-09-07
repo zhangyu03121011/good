@@ -49,6 +49,14 @@
     </repositories>
 
     <dependencies>
+    	<!-- 热部署配置 -->
+	    <dependency>    
+	        <groupId>org.springframework.boot</groupId>    
+	        <artifactId>spring-boot-devtools</artifactId>    
+	       	<optional>true</optional>
+	       	<scope>runtime</scope>
+	    </dependency> 
+	    
         <!--web支持-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
