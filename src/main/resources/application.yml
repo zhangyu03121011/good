@@ -109,7 +109,7 @@ spring:
   profiles: dev
   #数据源
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/good_manage?useUnicode=true&characterEncoding=utf-8&useSSL=true&autoReconnect=true&allowMultiQueries=true
+    url: jdbc:mysql://127.0.0.1:3306/ivplay_manager?useUnicode=true&characterEncoding=utf-8&useSSL=true&autoReconnect=true&allowMultiQueries=true
     username: root
     password: ${password}
 #日志
@@ -119,8 +119,8 @@ logging:
 
 #数据库密码加密
 #java -cp druid-1.1.0.jar com.alibaba.druid.filter.config.ConfigTools 你的密码
-publicKey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAIypmsbdlv4rDJUdLTv7J0YHLuxdc4ob8uH/R4+ORNTBaK3+lQa+Ly/CfuU22kVrmywXFV343zhi1VFg/JeeIJMCAwEAAQ==
-password: dpCDgovbI8DVbkIkyJe6Jqep64P2wc3MNnA6k0U0NyywFCbSeupWWpeFeXRa2gW44ZvywMgN/y8AHHn5cCYHDw==
+publicKey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAIq7Hn0ppOGBoGofIAl8Wf7jEtQ42fp+fKhF0SqR5bl+kc2UrwodrX223sVa17G61NxN0MVlkctCaLNurSIRulECAwEAAQ==
+password: XzJzmjxiTsSeGzxFLm9fdalRm+Ie63bp1HMKwYXF4eo2T6pZZ+4+DdBsu9ayP0jLbFQi7JthkuQPu9bBbQhW3A==
 
 #上传文件配置信息
 #文件仓库地址
