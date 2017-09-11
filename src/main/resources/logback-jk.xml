@@ -178,7 +178,7 @@
 
     <logger name="org.springframework.web" level="info"/>
     <logger name="org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor" level="INFO"/>
-    <logger name="com.jk" level="debug"/>
+    <logger name="com.ivplay" level="debug"/>
 
     <!--开发环境:打印控制台-->
     <springProfile name="dev">

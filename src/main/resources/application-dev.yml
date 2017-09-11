@@ -1,0 +1,28 @@
+#开发环境配置
+server:
+  #端口
+  port: 80
+spring:
+  profiles: dev
+  #数据源
+  datasource:
+    url: jdbc:mysql://rm-wz91c2ybx4gc6inbfo.mysql.rds.aliyuncs.com:3306/ivplay?useUnicode=true&characterEncoding=utf-8&useSSL=true&autoReconnect=true&allowMultiQueries=true
+    username: root
+    password: ${password}
+#日志
+logging:
+  config: classpath:logback-jk.xml
+  path: D:\\ivplay-manager\\log
+
+#数据库密码加密
+#java -cp druid-1.1.0.jar com.alibaba.druid.filter.config.ConfigTools 你的密码
+publicKey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAM4+d6e979vTXSYv09St+6L7vUlCJuZq0EhzPWsO2haNpn2YHeLsovG0z/Hmh+TwjTu+P4YZiNlCcgOE/mXaZ1MCAwEAAQ==
+password: fcbEjBG0qpPNg6dy3x4F2GkCVs3VDl6gIlKTH9lB4cW+bAPWVchliUOEVgsYRP7dxczy9H0z7t0EQDdL6Ov1Mg==
+
+#上传文件配置信息
+#文件仓库地址
+repositoryPath: D:\\ivplay-manager
+#图片访问路径
+imageUrl: D:\\ivplay-manager
+#文档访问路径
+docUrl: D:\\ivplay-manager

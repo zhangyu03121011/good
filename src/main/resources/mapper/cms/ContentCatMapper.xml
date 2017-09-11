@@ -2,8 +2,8 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.jk.modules.cms.mapper.ContentCatMapper">
-	<resultMap id="ContentCatResultMap" type="com.jk.modules.cms.model.ContentCat">
+<mapper namespace="com.ivplay.modules.cms.mapper.ContentCatMapper">
+	<resultMap id="ContentCatResultMap" type="com.ivplay.modules.cms.model.ContentCat">
 		<id column="id" property="id" jdbcType="BIGINT" />
 		<result column="name" property="name" jdbcType="VARCHAR" />
 		<result column="parent_id" property="parentId" jdbcType="BIGINT" />
@@ -14,7 +14,7 @@
 		<result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
 	</resultMap>
 	
-	<resultMap id="treeMap" type="com.jk.modules.sys.vo.TreeNode">
+	<resultMap id="treeMap" type="com.ivplay.modules.sys.vo.TreeNode">
 		<id column="id" property="id" jdbcType="BIGINT" />
 		<result column="parent_id" property="parentId" jdbcType="BIGINT" />
 		<result column="name" property="name" jdbcType="VARCHAR" />
@@ -22,6 +22,6 @@
 
 	<!--返回树列表-->
 	<select id="findTreeList" resultMap="treeMap">
-		SELECT id,parent_id,name FROM content_cat
+		SELECT id,parent_id,name FROM t_content_cat
 	</select>
 </mapper>

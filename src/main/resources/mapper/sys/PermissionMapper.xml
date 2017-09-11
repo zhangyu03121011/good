@@ -2,8 +2,8 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.jk.modules.sys.mapper.PermissionMapper">
-	<resultMap id="PermissionResultMap" type="com.jk.modules.sys.model.Permission">
+<mapper namespace="com.ivplay.modules.sys.mapper.PermissionMapper">
+	<resultMap id="PermissionResultMap" type="permission">
 		<id column="id" property="id" jdbcType="BIGINT" />
 		<result column="name" property="name" jdbcType="VARCHAR" />
 		<result column="type" property="type" jdbcType="VARCHAR" />
@@ -27,7 +27,7 @@
 		<!--</collection>-->
 	<!--</resultMap>-->
 	
-	<resultMap id="treeMap" type="com.jk.modules.sys.vo.TreeNode">
+	<resultMap id="treeMap" type="com.ivplay.modules.sys.vo.TreeNode">
 		<id column="id" property="id" jdbcType="BIGINT" />
 		<result column="parent_id" property="parentId" jdbcType="BIGINT" />
 		<result column="name" property="name" jdbcType="VARCHAR" />
@@ -38,20 +38,20 @@
 		SELECT
 			*
 		FROM
-			permission p
+			t_permission p
 		WHERE
  			p.type != '0'
  			AND p.id IN
  			(SELECT
 				rp.permission_id
 			FROM
-				role_permission rp
+				t_role_permission rp
 			WHERE
 				rp.role_id IN (
 					SELECT
 						ur.role_id
 					FROM
-						user_role ur
+						t_admin_role ur
 					WHERE
 						ur.user_id = #{userId}
 				)
@@ -61,22 +61,23 @@
 	<!--根据用户ID查询用户菜单列表-->
 	<select id="findMenuListByUserId" parameterType="java.lang.Long" resultMap="PermissionResultMap">
 		SELECT
-		*
+			*
 		FROM
-		permission p
+			t_permission p
 		WHERE
-		(p.type = '0' or p.type = '1')
-		AND p.id IN
+			(p.type = '0' or p.type = '1')
+		AND
+			p.id IN
 		(SELECT
-		rp.permission_id
+			rp.permission_id
 		FROM
-		role_permission rp
+			t_role_permission rp
 		WHERE
 		rp.role_id IN (
 		SELECT
 		ur.role_id
 		FROM
-		user_role ur
+			t_admin_role ur
 		WHERE
 		ur.user_id = #{userId}
 		)
@@ -85,6 +86,6 @@
 
 	<!--返回树列表-->
 	<select id="findTreeList" resultMap="treeMap">
-		SELECT id,parent_id,name FROM permission p  order by p.sort asc
+		SELECT id,parent_id,name FROM t_permission p  order by p.sort asc
 	</select>
 </mapper>
